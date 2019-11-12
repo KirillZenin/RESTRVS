@@ -18,12 +18,12 @@ spec:
   template:
     metadata:
       labels:
-        service: ns-11
+        service: ns-18
         app: service
     spec:
       containers:
         - name: service
-          image: bulmiha64/restvps-go:latest
+          image: https://github.com/KirillZenin/RESTRVS:latest
           imagePullPolicy: Always
           env:
             - name: APP_HOST
