@@ -24,7 +24,7 @@ spec:
     spec:
       containers:
         - name: service
-          image: KirillZenin/RESTRVS:latest
+          image: bloodghastzk/restrvs:latest
           imagePullPolicy: Always
           env:
             - name: APP_HOST
