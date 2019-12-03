@@ -1,7 +1,7 @@
 apiVersion: apps/v1  # API version
 kind: Deployment
 metadata:
-  name: redis-master-ns-18
+  name: redis-master-ns-11
   labels:
     app: redis
 spec:
@@ -31,7 +31,7 @@ spec:
 apiVersion: v1
 kind: Service        # Type of Kubernetes resource
 metadata:
-  name: redis-master-ns-18 # Name of the Kubernetes resource
+  name: redis-master-ns-11 # Name of the Kubernetes resource
   labels:            # Labels that will be applied to this resource
     app: redis
     role: master

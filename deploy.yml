@@ -1,4 +1,3 @@
-
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -24,7 +23,7 @@ spec:
     spec:
       containers:
         - name: service
-          image: bloodghastzk/restrvs:latest
+          image: bulmiha64/restvps-go:latest
           imagePullPolicy: Always
           env:
             - name: APP_HOST
@@ -32,7 +31,7 @@ spec:
             - name: APP_PORT
               value: "80"
             - name: DB_HOST
-              value: "redis-master"
+              value: "redis-master-ns-18"
             - name: DB_PORT
               value: "6379"
           ports:
@@ -58,9 +57,13 @@ kind: Service        # Type of Kubernetes resource
 metadata:
   name: ns-18 # Name of the Kubernetes resource
   labels:            # Labels that will be applied to this resource
-    app: ns-18
+    service: ns-18
     tier: backend
 spec:
   ports:
   - port: 80       # Map incoming connections on port 6379 to the target port 6379 of the Pod
     targetPort: 80
+    name: service
+  selector:
+    service: ns-18
+    app: service
